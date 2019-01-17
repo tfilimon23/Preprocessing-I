@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1.5;
 }
 ol, ul {
 	list-style: none;
@@ -54,6 +54,140 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+html{
+	font-size: 62.5%;
+}
+
+// Variables
+@h1font: 5rem;
+@h2font: 3rem;
+@pfont: 2rem;
+@afont: 1.5rem;
+
+// Mixins
+.nav(){
+  display: flex;
+  justify-content: space-between;
+}
+
+// General Styles
+
+.container{
+	max-width: 1024px;
+	margin: 0 auto;
+
+	@media(max-width: 500px){
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+header{
+	border-bottom: 1px solid darkred;
+	@media(max-width:500px){
+		margin:1.5rem 1rem;
+	}
+	nav{
+		.nav;
+		margin: 1.5rem 5rem;
+
+		@media(max-width:500px){
+			.nav;
+		}
+		a{
+			text-decoration:none;
+			color: darkred;
+			font-size: @afont;
+		}
+	}
+}
+
+.intro{
+	border: 2px solid darkred;
+	margin: 10rem 0 5rem 0;
+	padding: 16rem;
+
+	@media(max-width: 500px){
+		padding: 4rem;
+		margin: 5rem 1rem 2.5rem 1rem;
+	}
+}
+
+img{
+	display: block;
+	margin: 0 auto 2rem;
+	width: 60%;
+
+	@media(max-width: 500px){
+		display: block;
+		margin: 0 auto 2rem;
+		width:75%;
+	}
+}
+
+	h1{
+		font-size: @h1font;
+		padding-bottom: 2rem;
+}
+
+.main-content{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+
+	@media(max-width: 500px){
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+}
+
+.details{
+	margin: 3rem 3rem 10rem 3rem;
+	padding-right: 2rem;
+	h2{
+		font-size: @h2font;
+		font-style: bold;
+		border-bottom: 1px solid darkred;
+	
+	}
+}
+
+.bio{
+	background-color: rgb(192, 155, 125);
+	padding: 2rem;
+}
+
+p{
+	font-size: @pfont;
+}
+
+ul{
+	list-style: square inside;
+	li{
+	font-size: @pfont;
+	}
+}
+
+footer{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2rem;
+	align-items: center;
+	h3{
+		font-size: 2.5rem;
+		border-bottom: 1px dashed darkred;
+		padding: 0 10rem 0 10rem;
+		margin-bottom: 2rem;
+	}
+}
+
+@media(max-width: 500px){
+	.copyright{
+		padding-bottom: 1rem;
+	}
+}
